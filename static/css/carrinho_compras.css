@@ -1,0 +1,469 @@
+* {
+    margin: 0;
+    padding: 0;
+    transition: all 100ms;
+}
+
+::-webkit-scrollbar {
+    width: 0.75vw;
+}
+  
+::-webkit-scrollbar-track {
+    background: antiquewhite;
+    border-radius: 0 1vw 1vw 0;
+}
+  
+::-webkit-scrollbar-thumb {
+    background-color: rgb(231, 208, 166);
+    border-radius: 1vw;
+}
+
+#img_loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    height: 40vh;
+    animation: gira 2s linear infinite;
+    z-index: 11;
+}
+  
+  @keyframes gira {
+    from {
+      transform: rotate(0deg)
+    }
+    to {
+      transform: rotate(360deg)
+    }
+}
+
+#background_loading {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    background: radial-gradient(white, rgb(226, 209, 185));
+}
+
+body {
+    overflow: hidden;
+    background-color: #fff3e3;
+}
+
+#bloco_esquerda {
+    display: inline-flex;
+    flex-direction: column;
+    width: 55vw;
+    height: 90vh;
+    margin-top: 5vh;
+    margin-left: 10vw;
+    margin-right: 5vw;
+}
+
+#lista_itens {
+    width: 55vw;
+    height: 65vh;
+    background-color: antiquewhite;
+    border-radius: 1vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#img_sacola_vazia {
+    position: absolute;
+    visibility: hidden;
+    width: 55vw;
+    height: 90vh;
+    border-radius: 1vw;
+}
+
+.item_lista_compras {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1vw;
+    margin-left: 1vw;
+}
+
+.item_desc_img {
+    display: flex;
+    height: 13vh;
+    flex-direction: row;
+
+}
+
+.img_lista_compras {
+    height: 13vh;
+    width: auto;
+    box-shadow: 0 0 10px -7px black;
+}
+
+.desc_item {
+    height: 13vh;
+    width: 20ch;
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 0.5vw;
+    font-size: 0.9vw;
+}
+
+.nome_item {
+    display: block;
+    font-weight: bolder;
+}
+
+.quantidade_do_produto_lista_compras_com_titulo {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9vw;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.quantidade_do_produto_lista_compras {
+    display: flex;
+    flex-direction: row;
+    border: 0.1vw solid black;
+    border-radius: 0.3vw;
+}
+
+.quantidade_do_produto_btn_mais {
+    height: 1.75vw;
+    width: 1.75vw;
+    border: none;
+    border-radius: 0.3vw 0 0 0.3vw;
+    background-color: wheat;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.25vw;
+    font-weight: bolder;
+
+}
+
+.quantidade_do_produto_btn_mais:hover {
+    background-color: rgb(249, 230, 194);
+}
+
+.quantidade_do_produto_btn_menos {
+    height: 1.75vw;
+    width: 1.75vw;
+    border: none;
+    border-radius: 0 0.3vw 0.3vw 0;
+    background-color: wheat;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.25vw;
+    font-weight: bolder;
+}
+
+.quantidade_do_produto_btn_menos:hover {
+    background-color: rgb(249, 230, 194);
+}
+
+.quantidade_do_produto_display_qtd {
+    line-height: 1.75vw;
+    height: 1.75vw;
+    width: 2.2vw;
+    resize: none;
+    text-align: center;
+    border: none;
+    background-color: #fff3e3;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.25vw;
+}
+
+.quantidade_unica {
+    visibility: hidden;
+}
+
+/* .quantidade_maxima_quantificador_lista {
+    visibility: hidden;
+} */
+
+.valor_produto_lista_compras {
+    font-size: 1.75vw;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.valor_produto_lista_compras_desc {
+    font-size: 0.9vw;
+    font-weight: normal;
+}
+
+.excluir_item_lista {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: wheat;
+    height: 1.7vw;
+    width: 1.7vw;
+    margin-right: 1vw;
+    border-radius: 100000vw;
+    border: 0.1vw solid red;
+}
+
+.excluir_item_lista:hover {
+    background-color: rgb(249, 230, 194);
+    border-color: rgb(255, 70, 70);
+}
+
+.excluir_item_lista:hover .linha_x {
+    background-color: rgb(255, 70, 70);
+}
+
+
+.linha_x {
+    position:inherit;
+    display: inline-block;
+    height: 1.1vw;
+    width: 0.15vw;
+    background-color: red;
+    border-radius: 100000vw;
+}
+
+.linha_x:first-child {
+    transform: rotate(45deg);
+}
+
+.linha_x:last-child {
+    transform: rotate(-45deg);
+}
+
+#frete {
+    height: 20vh;
+    width: 55vw;
+    background-color: antiquewhite;
+    margin-top: 5vh;
+    border-radius: 1vw;
+}
+
+#titulo_frete {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2vw;
+    font-weight: bolder;
+    color: rgb(241, 216, 170);
+    text-shadow: 0 0 25px #fff3e3;
+    margin-left: 1vw;
+    display: block;
+}
+
+#inputs_info_frete {
+    height: calc(20vh - 2.185vw);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.div_input_frete {
+    margin-bottom: 2vh;
+}
+
+.label_frete {
+    display: block;
+    color: black;
+    font-size: 1.35vw;
+    font-family: 'Courier New', Courier, monospace;
+    transition: all 250ms;
+}
+
+.input_frete {
+    border-radius: 0.5vw;
+    font-size: 1.5vw;
+    padding: 0.5vw;
+    width: 19vw;
+    border: 0.2vw solid rgb(235, 210, 164);
+    color: rgb(235, 210, 164);
+    background-color: #fff3e3;
+    outline: none;
+}
+
+#input_telefone_erro {
+    visibility: hidden;
+    font-weight: bolder;
+    color: red;
+    font-size: 1.5vw;
+    transition: all 250ms;
+}
+
+::-webkit-input-placeholder {
+    color: rgb(250, 225, 180);
+}
+
+#disclaimer_endereço {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1vw;
+}
+
+#bloco_direita {
+    position: absolute;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 90vh;
+    width: 20vw;
+    margin-top: 5vh;
+    margin-left: 0;
+    margin-right: 10vw;
+    margin-bottom: auto;
+}
+
+#area_valor {
+    height: 70vh;
+    background-color: antiquewhite;
+    border-radius: 1vw;
+}
+
+#valor_da_compra {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20vw;
+    height: 46.5vh;
+    background-color: antiquewhite;
+    border-radius: 1vw 1vw 0vw 0vw;
+}
+
+#soma_produtos {
+    width: 20vw;
+    height:36.5vh;
+    display: flex;
+    flex-direction: row;
+}
+
+#soma_produtos_nomes {
+    width: 12vw;
+    height:36.5vh;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+
+#soma_produtos_valores {
+    width: 8vw;
+    height:36.5vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.soma_produtos_texto {
+    display: block;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85vw;
+    margin-top: 0.25vw;
+    margin-left: 1vw;
+}
+
+.soma_produtos_texto:nth-child(1) {
+    margin-top: 0.75vw;
+}
+
+#total_compra {
+    width: 20vw;
+    height: 10vh;
+    background-color: wheat;
+    border-top: 0.2vw solid white;
+    border-bottom: 0.2vw solid white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.total_compra_texto {
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2.5vw;
+}
+
+.btn {
+    margin-left: 1vw;
+    width: 18vw;
+    border-radius: 0.5vw;
+    font-size: 1.6vw;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: -0.1vw;
+    padding: 0.5vw;
+}
+
+#btn_comprar {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    border: 0.25vw solid rgb(241, 216, 170);
+    color: rgb(241, 216, 170);
+    background-color: #fff3e3;
+    font-weight: bolder;
+    box-shadow: 0px 0px 25px -25px black;
+    transition: all 250ms;
+}
+
+#btn_comprar:hover {
+    color: white;
+    background-color: rgb(241, 216, 170);
+}
+
+#btn_continuar_comprando {
+    border: 0.1vw solid black;
+    color: black;
+    background-color: antiquewhite;
+    transition: all 100ms;
+}
+
+#btn_continuar_comprando:hover {
+    background-color: rgb(255, 240, 221);
+    color: rgb(37, 37, 37);
+    border-color: rgb(37, 37, 37);
+}
+
+#logo_frase {
+    width: auto;
+    height: 14vh;
+}
+
+#frase {
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.5vw;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.center_text {
+    text-align: center;
+}
+
+@keyframes piscar {
+    0% {
+        color: black;
+    }
+    16.5% {
+        color: red;
+    }
+    33% {
+        color: white;
+    }
+    49.5% {
+        color: red;
+    }
+    66% {
+        color: white;
+    }
+    to {
+        color: red;
+    }
+}

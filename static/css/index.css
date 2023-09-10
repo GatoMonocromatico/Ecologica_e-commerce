@@ -1,0 +1,266 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+#cabeçalho {
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-size: 3vw;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    left: 0px;
+    top: 0;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100vw;
+    height: 10vh;
+    background-color: white;
+    border-bottom: 1px solid black;
+    z-index: 3;
+}
+
+#logo_cabeçalho {
+    border-radius: 100%;
+    width: 9vh;
+    height: auto;
+}
+
+h1 {
+    position: fixed;
+    width: 100vw;
+    font-size: 2.25vw;
+    text-align: center;
+    font-weight: lighter;
+}
+
+#icone_sacola_compras {
+    width: 6vh;
+    height: auto;
+    display: inline-block;
+    transition: all 250ms;
+}
+
+#icone_sacola_compras:hover {
+    transform: scale(1.1);
+}
+
+#sacola_compras_btn {
+    width: 6vh;
+    height: 6vh;
+    margin-left: auto;
+    margin-right: 1vw;
+    z-index: 4;
+    background-color: transparent;
+    border: none;
+}
+
+#sacola_input {
+    display: none;
+}
+
+#img_loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    height: 40vh;
+    animation: gira 2s linear infinite;
+    z-index: 11;
+}
+  
+  @keyframes gira {
+    from {
+      transform: rotate(0deg)
+    }
+    to {
+      transform: rotate(360deg)
+    }
+}
+
+#background_loading {
+    position: absolute;
+    margin-top: 0;
+    top: calc(10vh + 1px);
+    width: 100vw;
+    height: calc(90vh - 1px);
+    z-index: 10;
+    background: radial-gradient(white, rgb(226, 209, 185));
+}
+
+.categoria_produtos {
+    height: 30px;
+    margin-left: 2.7vw;
+    margin-right: auto;
+    background-color: linen;
+    display: inline-block;
+    border-radius: 25px 25px 0 0;
+}
+
+#categoria_produtos_tudo {
+    width: 20pc;
+}
+
+#categoria_produtos_tudo::after {
+    margin-left: 1pc;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.75vw;
+    color: black;
+    content: 'Todos produtos';
+    display: inline-block;
+    font-weight: bolder;
+}
+
+#barra_produtos_tudo {
+    margin-top: 11vh;
+}
+
+#produtos_todo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: max-content;
+    height: 27.43vw;
+    background-color: antiquewhite;
+    transition: transform 1s;
+    z-index: 1;
+    margin-left: 3.5vw;
+    box-shadow: -50vw  0px antiquewhite;
+}
+
+/* #setas_produtos1 {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 27.43vw;
+    width: 100vw;   
+    background-color: transparent;
+} */
+
+.seta {
+    position: absolute;
+    display: inline-block;
+    content: "";
+    height: 2.5vw;
+    width: 2.5vw;
+    background-color: transparent;
+    border-radius: 0px 0.6vw 0px 0.6vw;
+    z-index: 2;
+    transform: translateY(13.715vw) rotate(45deg);
+}
+
+.seta_direita {
+    margin-right: 0.525vw;
+    border-top: 0.3vw solid black;
+    border-right: 0.3vw solid black;
+    transform: translateX(96.7vw) translateY(13.715vw) rotate(45deg);
+}
+
+.seta_esquerda {
+    margin-left: 0.525vw;
+    border-bottom: 0.3vw solid black;
+    border-left: 0.3vw solid black;
+}
+
+.seta_span {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    height: 27.43vw;
+    width: 2.8vw;
+    background-color: antiquewhite;
+    z-index: 1;
+}
+
+.seta_span_esquerda {
+    left: 0;
+    margin-right: auto;
+}
+
+.seta_span_direita {
+    right: 0;
+    margin-left: auto;
+}
+
+.produto {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 26.43vw;
+    width: 17.49vw;
+    background-color: wheat;
+    border-radius: 15px;
+    margin-right: 1.4vw;
+    margin-left: 0;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+}
+
+.imagem_demonstração {
+    display: block;
+    height: auto;
+    width: 15.49vw;
+    margin-top: 1vw;
+    border-radius: 5px;
+}
+
+.texto_produto {
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.25vw;
+    font-weight: 600;
+}
+
+.desc_tamanho {
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1vw;
+}
+
+.valor {
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5vw;
+    margin-bottom: 1vw;
+
+}
+
+.btn_comprar {
+    font-family: 'Courier New', Courier, monospace;
+    display: inline-block;
+    font-size: 0;
+    border: 1px solid transparent;
+    padding-top: 0.05vw;
+    padding-bottom: 0.05vw;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    border-radius: 0.5vw;
+    background-color: transparent;
+    color: transparent;
+    font-weight: bolder;
+    visibility: hidden;
+    transition: all 250ms;
+}
+
+.produto:hover .btn_comprar {
+    font-size: 1.25vw;
+    width: auto;
+    height: auto;
+    border: 1px solid white;
+    background-color: wheat;
+    color: white;
+    visibility: visible;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='logo_ecológica.png') }}">
+    <script src="{{ url_for('static', filename='js/index.js') }}" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Início</title>
+</head>
+<body>
+<form method="post" action="{{ url_for('carrinho') }}">
+    <div id="cabeçalho">
+        <img draggable="false" id="logo_cabeçalho" src="{{ url_for('static', filename='logo_ecológica.png') }}">
+        Ecológica
+        <h1>Moda sustentável, faz bem para o mundo, faz bem para você.</h1>
+        <button type="submit" id="sacola_compras_btn">
+            <input name="sacola" id="sacola_input">
+            <img draggable="false" id="icone_sacola_compras" src="{{ url_for('static', filename='simbolo_sacola_compras.png') }}">
+        </button>
+    </div>
+
+    <div id="loading">
+        <img src="static/loading_ecológica.png" id="img_loading">
+        <div id="background_loading"></div>
+    </div>
+
+    <div id="barra_produtos_tudo">
+
+    </div>
+</form>
+</body>
+</html>

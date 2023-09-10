@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/carrinho_compras.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='logo_ecológica.png') }}">
+    <script src="{{ url_for('static', filename='js/carrinho_compras.js') }}" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Carrinho</title>
+</head>
+<body>
+    <input value="{{ itens }}" id="itens_sacola" style="display: none">
+    <div id="loading">
+        <img src="static/loading_ecológica.png" id="img_loading">
+        <div id="background_loading"></div>
+    </div>
+    <div id="bloco_esquerda">
+        <img src="static/imagem_sacola_vazia.png" id="img_sacola_vazia">
+        <div id="lista_itens"></div>
+        <form id="form">
+                <div id="frete">
+                    <span id="titulo_frete">Entrega</span>
+                    <div id="inputs_info_frete">
+                        <div id="div_input_endereco" class="div_input_frete">
+                            <label id="label_input_endereco" class="label_frete">Rua</label>
+                            <input id="input_endereco" class="input_frete" placeholder="Rua, Número" name="endereço">
+                        </div>
+                        <div id="div_input_telefone" class="div_input_frete">
+                            <label id="label_input_telefone" class="label_frete">Telefone de contato <span id="input_telefone_erro">*</span></label>
+                            <input id="input_telefone" class="input_frete" placeholder="(00) 00000-0000" name="telefone" required>
+                        </div>
+                    </div>
+                    <span id="disclaimer_endereço">*Caso não inserir o endereço entraremos em contato por meio do telefone fornecido.</span>
+                </div>
+            </div>
+            <div id="bloco_direita">
+            <div id="area_valor">
+                <div id="valor_da_compra">
+                    <div id="soma_produtos">
+                        <div id="soma_produtos_nomes"></div>
+                        <div id="soma_produtos_valores"></div>
+                    </div>
+                    <div id="total_compra">
+                        <span class="total_compra_texto">Total</span><span class="total_compra_texto" id="valor_da_compra_texto"></span>
+                    </div>
+                </div>
+                <button class="btn" id="btn_comprar" formaction="{{ url_for('index') }}" type="submit">Finalizar compra</button>
+                <button class="btn" id="btn_continuar_comprando" type="button" onclick="redirecionar_para_index()">Continuar comprando</button>
+            </div>
+        </form>
+        <span id="frase">
+            <img src="{{ url_for('static', filename='logo_ecológica.png') }}" id="logo_frase">
+            Faz bem para você,<br>faz bem para o mundo.
+        </span>
+    </div>
+
+</body>
+</html>
