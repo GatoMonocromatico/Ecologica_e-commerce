@@ -1,4 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
+import os
+
+os.environ["PYTHON_VERSION"] = "3.11.0"
 
 app = Flask(__name__)
 
